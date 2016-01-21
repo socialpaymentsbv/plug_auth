@@ -122,4 +122,14 @@ defmodule PlugAuth.Authentication.Token.Test do
     call(ParamErrorHandlerPlug, [auth_param("invalid_token")])
     |> assert_error_handler_called
   end
+
+  test "can skip authentication internally" do
+    conn =
+      conn(:get, "/", [])
+      |> assign(:authenticated_user, %{role: :admin})
+      |> ParamPlug.call([])
+
+    assert_authorized conn, "Authorized"
+    refute conn.halted
+  end
 end
