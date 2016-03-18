@@ -107,7 +107,7 @@ For situations when you need both Basic Auth and Token Auth subsequently, you
 are free to compose them into a single plug.
 To differentiate between the authentication levels, you should parametrise
 both of the plugs with `assign_key`. This designates the key name that will be used
-in `Plug.Conn` assigns to store the data obtained from `CredentialStore`.
+in `Plug.Conn` assigns to store the data obtained from `CredentialStore`(s).
 
 ```elixir
 defmodule BasicWithTokenPlug do
