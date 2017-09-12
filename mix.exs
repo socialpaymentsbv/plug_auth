@@ -21,7 +21,7 @@ defmodule PlugAuth.Mixfile do
 
   defp deps do
     [
-      {:cowboy, "~> 1.0.0"},
+      {:cowboy, "~> 1.0"},
       {:plug, "~> 1.0"},
       {:earmark, "~> 0.2", only: :dev},
       {:ex_doc, "~> 0.12", only: :dev},
